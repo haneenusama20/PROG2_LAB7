@@ -3,6 +3,7 @@ package Backend;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.PropertyResourceBundle;
 import javax.swing.JOptionPane;
 
 
@@ -17,6 +18,7 @@ public class Students extends PersonDetails{
   
     private final static String role = "Student";
     private ArrayList<StudentProgressInCourse> enrolledCourses;
+    protected ArrayList<Certificate> certificatesEarned;
     
   
     
@@ -25,6 +27,7 @@ public class Students extends PersonDetails{
         super( email, passwordHash, salt,username);
         
         this.enrolledCourses  = new ArrayList<>();
+        this.certificatesEarned = new ArrayList<>();
         
     }
     public Students(String userId, String username, String email, byte[] passwordHash,byte[]salt,ArrayList<StudentProgressInCourse>enrolledData) {
@@ -131,8 +134,21 @@ return false;
         return enrolledCourses;
     }
 
+    public ArrayList<Certificate> getCertificatesEarned() {
+        return certificatesEarned;
+    }
+
     
 
     
+
+    public void removeCourse(String cid){
+    StudentProgressInCourse spic = SearchINEnrolled(cid);
+    if(spic  ==null){
+    JOptionPane.showMessageDialog(null, "STUDENT IS NOT ENROLLED");
+        return;
+    }
+    enrolledCourses.remove(spic);
+    }
     
 }
