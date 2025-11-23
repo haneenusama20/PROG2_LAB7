@@ -1,48 +1,27 @@
 {
-    "Students": [{
-        "Salt": "9o81JPA0VaWH4LArl7Vh9g==",
-        "Enrolled_Courses": [
-            {
-                "CourseID": "C_o9yN46NFC8",
-                "CourseProgress": 50,
-                "AllLessons": 2,
-                "LessonsDone": {
-                    "L_1MDSKlLI1e": false,
-                    "L_ttO8bG2GyX": true
-                }
-            },
-            {
-                "CourseID": "C_IEDYu4thF5",
-                "CourseProgress": 100,
-                "AllLessons": 1,
-                "LessonsDone": {"L_MzDTvUZMJ7": true}
-            }
-        ],
-        "Email": "sss@gmail.com",
-        "ID": "S_I4ROeo5lRa",
-        "PasswordHash": "emPJKg9Yq2o95pYEqU7OlXgiZ+5oDCo4J4szlSYWqHGElA4MaiJ/17OX1Qkot0lZR6SUQc8iAh+R7F9rdALxDg==",
-        "Name": "ssss"
-    }],
+    "Students": [],
     "Instructors": [
         {
-            "CreatedCourses": ["C_o9yN46NFC8"],
-            "Salt": "yWDkLulH1IhVc2oBi752fg==",
-            "Email": "ddd@gmail.com",
-            "ID": "I_jKkYEJVOLq",
-            "PasswordHash": "PqiBg4Ai1ilV7StV9HLfNWlJvIDhzxXfN/IFxdWWGFMdat2JEYbw9z594rigrtvDapNdNDeshxmreqHERz88Uw==",
-            "Name": "ddd"
+            "CreatedCourses": [
+                "C_NgjE6JfoSw",
+                "C_DBtEqzn2cW",
+                "C_CMc50Ni8em",
+                "C_MXOBhn65Y0",
+                "C_2h0TsD0fGA"
+            ],
+            "Salt": "60ofzFb4AdX9idLYLuX99w==",
+            "Email": "aaa@gm.com",
+            "ID": "I_vtU0MEWJzW",
+            "PasswordHash": "D7THA9Tpm9rDXeEgIhCt91WJrJDBGQNhfWSUHesGZeoZWo4RbCwKomxSPEmfianfsj5HD3jUU6+qrh/KXkUZ0g==",
+            "Name": "aaa"
         },
         {
-            "CreatedCourses": [
-                "C_tHcgaslcfd",
-                "C_IEDYu4thF5",
-                "C_W9NYHsPTQ7"
-            ],
-            "Salt": "BBysFWngChcvpq3LH8o1Pw==",
-            "Email": "abdo@gmail.com",
-            "ID": "I_tERiMntxO9",
-            "PasswordHash": "Mk2lFzvzpdFvWoZCdHu3aSpqullpEZaW40CaHPJeN+MzNNrxXCuYn0qcooD808z6/QNJcSy0M5SMI0f2a+Uwfw==",
-            "Name": "abdo"
+            "CreatedCourses": [],
+            "Salt": "60ofzFb4AdX9idLYLuX99w==",
+            "Email": "aaa@gm.com",
+            "ID": "I_vtU0MEWJzW",
+            "PasswordHash": "D7THA9Tpm9rDXeEgIhCt91WJrJDBGQNhfWSUHesGZeoZWo4RbCwKomxSPEmfianfsj5HD3jUU6+qrh/KXkUZ0g==",
+            "Name": "aaa"
         }
     ]
 }

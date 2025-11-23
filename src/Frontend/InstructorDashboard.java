@@ -16,6 +16,7 @@ import javax.swing.JList;
 
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -58,7 +59,8 @@ jsonFile coursesDb=new jsonFile();
    c.getTitle(),
        
        c.getCourseId(),
-           c.getDescription()
+           c.getDescription(),
+           c.getStatus().toUpperCase()
    
    });
    }
@@ -85,6 +87,7 @@ jsonFile coursesDb=new jsonFile();
         deleteCourse = new javax.swing.JButton();
         viewStudent = new javax.swing.JButton();
         manageLessonsBtn = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -113,15 +116,23 @@ jsonFile coursesDb=new jsonFile();
 
         courseTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "Title", "ID", "Description"
+                "Title", "ID", "Description", "Status"
             }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(courseTable);
 
         javax.swing.GroupLayout actionpanelLayout = new javax.swing.GroupLayout(actionpanel);
@@ -163,6 +174,13 @@ jsonFile coursesDb=new jsonFile();
             }
         });
 
+        jButton1.setText("Log out");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -186,11 +204,17 @@ jsonFile coursesDb=new jsonFile();
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(manageLessonsBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(88, 88, 88)
+                .addGap(21, 21, 21)
+                .addComponent(jButton1)
+                .addGap(42, 42, 42)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(editCourse, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(deleteCourse, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -297,6 +321,17 @@ jsonFile coursesDb=new jsonFile();
             manageLessonsBtn.setEnabled(false);
     }//GEN-LAST:event_manageLessonsBtnActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        int choice = JOptionPane.showConfirmDialog(this, "Are you sure you want to log out?","Confirm",JOptionPane.YES_NO_OPTION);
+        if (choice == JOptionPane.YES_OPTION) {
+            SwingUtilities.getWindowAncestor(this).dispose();
+            LoginFrame login = new LoginFrame();
+            login.setVisible(true);
+
+        }
+        else {return;}
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -328,6 +363,7 @@ jsonFile coursesDb=new jsonFile();
     private javax.swing.JTable courseTable;
     private javax.swing.JButton deleteCourse;
     private javax.swing.JButton editCourse;
+    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton manageLessonsBtn;
